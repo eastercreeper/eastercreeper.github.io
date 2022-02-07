@@ -1,0 +1,100 @@
+body {
+  background-color: rgb(15,15,15);
+}
+
+@font-face {
+  font-family: coolFont;
+  src: url(../font/font.ttf);
+}
+
+.text {
+  color: rgb(210,210,210);
+  font-family: coolFont;
+  font-size: 18px;
+}
+
+.texth {
+  color: rgb(210,210,210);
+  font-family: coolFont;
+  
+  font-size: 35px;
+}
+
+.main-panel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+  animation: fadeInAnimation ease 1.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-duration: 0.8s;
+}
+
+.link {
+  text-decoration: none;
+  color: rgb(210,210,210);
+  font-family: coolFont;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.card {
+  display: inline-block;
+  box-shadow: 0 4px 8px 1px rgba(0,0,0,0.2);
+  background-color: rgb(36,36,36);
+  padding: 6px 6px;
+  margin: 10px 10px;
+  width: 40%;
+  height: 40%;
+  border-radius: 10px;
+  border-top: 4px solid rgb(255, 255, 255);
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+
+.ctext {
+  color: rgb(210,210,210);
+  font-family: Arial;
+  font-size: 17px;
+}
+
+.chead {
+  color: rgb(210,210,210);
+  font-family: Arial;
+  font-size: 25px;
+}
+
+.button {
+  background-color: rgb(52,52,52);
+  border: none;
+  color: white;
+  padding: 8px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; 
+  transition-duration: 0.4s;
+  border-radius: 10px;
+}
+
+.button {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
