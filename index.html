@@ -1,0 +1,122 @@
+	<head>
+	<script src="js/animatedtitle.js"></script>
+	<script src="js/jparticles.js"></script>
+    <script src="js/particle.js"></script>
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Easter" />
+	<meta property="og:image" content="assets/avatar.png" />
+	<meta name="twitter:description" content="Easter's website" />
+	
+	<link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico">
+	<style>
+		@font-face {
+			font-family: "Roboto";
+			font-style: normal;
+			font-weight: 400;
+			src: local("Roboto"), local("Roboto-Regular"), url(https://fonts.gstatic.com/s/roboto/v15/oMMgfZMQthOryQo9n22dcuvvDin1pK8aKteLpeZ5c0A.woff2) format('woff2');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+		}
+		html {
+			color: #ffffff;
+			height: 100%;
+			background-image: url("assets/background.png");
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			animation-name: fadein;
+			animation-duration: 1s;
+			font-family: roboto;
+		}
+		.center {
+			border-radius: 5%;
+			background-color: #000000a0;
+			padding: 20px;
+			position: absolute;
+			margin: auto;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			text-align: center;
+			animation-name: fadein;
+			animation-duration: 1s;
+		}
+		.right {
+			float: right;
+			text-align: right;
+		}
+		.img {
+			border-radius: 60%;
+			width: 150px;
+			height: 150px;
+			animation-name: imgpopout;
+			animation-duration: 1s;
+		}
+		p {
+			margin: 0px;
+			padding: 0px;
+		}
+		div { cursor: default; }
+		a { color: #9e09e8; }
+		.center hr {
+			width: 50%;
+			animation-name: flowout;
+			animation-duration: 2s;
+		}
+		hr { color: #9e09e8; }
+		div:hover, a:hover { text-shadow: 0px 0px 8px; }
+		@keyframes fadein {
+			0% { opacity: 0%; }
+			100% { opacity: 100%; }
+		}
+		@keyframes flowout {
+			0% { width: 0%; }
+			100% { width: 50%; }
+		}
+		@keyframes imgpopout {
+			0% {
+				width: 0px;
+				height: 0px;
+			}
+			100% {
+				width: 150px;
+				height: 150px;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div id="particles" style="position: fixed; width: 100%; height: 100%;"></div>
+	<span class="center">
+		<img class="img" src="assets/avatar.png">
+		<div style="font-size: 180%;">Eastercreeper</div>
+		<div>Eastercreeper#7935</div>
+		<hr>
+		<p>
+			Github: <a href="https://github.com/eastercreeper" target="_blank">Eastercreeper</a>
+		</p>
+		<p>
+			Steam: <a href="https://steamcommunity.com/id/eastercreeper" target="_blank">eastercreeper</a>
+		</p>
+		<p>
+			Email: <a href="mailto:creeperboy889@gmail.com" target="_blank">creeperboy889@gmal.com</a>
+		</p>
+		<p>
+					Games: <a href="https://eastercreeper.github.io/games.github.io/" target="_blank">games.github.io</a>
+		</p>
+		<p>
+				Discord: <a href="https://discord.gg/WUQNtdhj26" target="_blank">Discord Server</a>
+		</p>
+		<hr>
+	</span>
+	<script>
+		new JParticles.particle('#particles', {
+			color: ['white', '#9e09e8'],
+			proximity: 80,
+			range: 120,
+			parallax: true,
+			maxSpeed: 0.55,
+     		minSpeed: 0.55
+		});
+	</script>
+</body>
