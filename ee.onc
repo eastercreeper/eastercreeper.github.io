@@ -1,0 +1,43 @@
+{
+  "Type": "UnencryptedConfiguration",
+  "Certificates": [
+    {
+      "GUID": "{<uuid #1>}",
+      "Type": "Authority",
+      "X509": "<server ca cert>"
+    }
+  ],
+  "NetworkConfigurations": [
+    {
+      "GUID": "{<uuid #2>}",
+      "Name": "OVPN",
+      "Type": "VPN",
+      "VPN": {
+        "Type": "OpenVPN",
+        "Host": "<preferred server - e.g. 45.33.67.152>",
+        "OpenVPN": {
+          "ServerCARef": "{<uuid #1>}",
+          "ClientCertType": "Pattern",
+          "ClientCertPattern": {
+             "IssuerCARef": [
+               "{<uuid #1>}"
+             ]
+          },
+          "AuthRetry": "interact",
+          "CompLZO": "true",
+          "Port": 1194,
+          "Proto": "udp",
+          "RemoteCertTLS": "server",
+          "RemoteCertEKU": "TLS Web Server Authentication",
+          "KeyDirection": "1",
+          "TLSAuthContents": "<client key>",
+          "SaveCredentials": true,
+          "ServerPollTimeout": 10,
+          "UserAuthenticationType": "Password",
+          "Username": "<seanowelen>",
+          "Password": "<seanowelen>"
+        }
+      }
+    }
+  ]
+}
