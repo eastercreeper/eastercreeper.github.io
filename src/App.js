@@ -74,12 +74,12 @@ const SlidingBackgroundStars = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  animation: slide 48s linear infinite;
-  background-image: url("/images/stars.png"); // Adjust the path as necessary
-  background-size: 150%;
+  animation: slide 90s linear infinite;
+  background-image: url("/images/wallpaper.png"); // Adjust the path as necessary
+  background-size: 120%;
   background-repeat: repeat;
-  image-rendering: pixelated;
-  opacity: 0.4;
+  image-rendering: high-quality;
+  opacity: 1;
   overflow: hidden;
   z-index: 0;
 
@@ -88,7 +88,7 @@ const SlidingBackgroundStars = styled.div`
       background-position-x: 0%;
     }
     100% {
-      background-position-x: 300%;
+      background-position-x: 100%;
     }
   }
 `;
@@ -179,23 +179,28 @@ const DraggableFrame = styled(Frame)`
 
 const AboutMeContent = () => (
   <div>
-    <h1>Air Quality Mapping</h1>
-    <p>This is supposed to be a window that displays air quality.<br></br> However, we did not have enough time to fully display the air quality mapping and prediction.</p>
+    <h1>About Me</h1>
+    <p>Hey, names 이스터!<br></br> Im that weird Korean nerd that produces music, watches anime, <br></br>sweats destiny 2,edits videos, and codes (clearly). <br></br>Feel free to stay and chill here!</p>
     <hr></hr>
-    <div style={{ display: 'flex', marginTop: '20px', alignItems: 'center', justifyContent: 'flex-start' }}>
+    <div style={{display: 'flex', marginTop: '20px', alignItems: 'center', justifyContent: 'flex-start'}}>
       {/* GitHub Link */}
-      <a href="https://github.com/pawkakol1/worlds-air-quality-index" target="_blank" rel="noopener noreferrer">
-        <img src="/images/gh.png" alt="GitHub Logo" style={{ width: '15px', height: '15px' }} />
+      <a href="https://github.com/eastercreeper" target="_blank" rel="noopener noreferrer">
+        <img src="/images/gh.png" alt="GitHub Logo" style={{width: '15px', height: '15px',marginRight: '10px'}}/>
       </a>
+
+      <a href="https://github.com/eastercreeper" target="_blank" rel="noopener noreferrer">
+        <img src="/images/yt.png" alt="YouTube Logo" style={{width: '15px', height: '15px',marginRight: '10px'}}/>
+      </a>
+
     </div>
   </div>
 );
 
 const MyPortfolioContent = () => (
-  <div>
-    <h1>Extra Window</h1>
-    <p>Test</p>
-  </div>
+    <div>
+      <h1>Extra Window</h1>
+      <p>Test</p>
+    </div>
 );
 
 const App = () => {
@@ -205,7 +210,7 @@ const App = () => {
   const [zIndexCounter, setZIndexCounter] = useState(1);
   const [activeWindow, setActiveWindow] = useState('');
   const [windows, setWindows] = useState({
-    airQuality: { isVisible: false, position: { x: 100, y: 100 }, zIndex: 1 },
+    aboutMe: { isVisible: false, position: { x: 100, y: 100 }, zIndex: 1 },
     extraWindow: { isVisible: false, position: { x: 200, y: 150 }, zIndex: 1 },
   });
   const [bootScreenVisible, setBootScreenVisible] = useState(true);
@@ -305,22 +310,21 @@ const App = () => {
         <Desktop>
           <WindowBorder ref={environmentRef}>
             <WindowedEnvironment>
-              <SlidingBackgroundStars />
-              <SlidingBackgroundObjects />
+              <SlidingBackgroundStars/>
               <Taskbar>
               <StyledReact95Button onClick={() => setStartMenuVisible(!isStartMenuVisible)}>
                 Start
               </StyledReact95Button>
               {isStartMenuVisible && (
                 <List style={{ position: 'absolute', left: '0', bottom: '60px' }}>
-                  <List.Item onClick={() => toggleWindow('airQuality')}>Air Quality</List.Item>
+                  <List.Item onClick={() => toggleWindow('aboutMe')}>About Me</List.Item>
                   <List.Item onClick={() => toggleWindow('extraWindow')}>Extra Window</List.Item>
                 </List>
               )}
               <StyledReact95Button
-                onClick={() => toggleWindow('airQuality')}
-                isActive={activeWindow === 'airQuality'}>
-                Air Quality
+                onClick={() => toggleWindow('aboutMe')}
+                isActive={activeWindow === 'aboutMe'}>
+                About Me
               </StyledReact95Button>
               <StyledReact95Button
                 onClick={() => toggleWindow('extraWindow')}
@@ -359,7 +363,7 @@ const App = () => {
                 style={{
                   padding: '10px',
                   boxSizing: 'border-box', // Ensure padding is included in the width calculation
-                  maxWidth: 'calc(100% - 20px)', // Account for padding
+                  maxWidth: 'calc(100% - 0px)', // Account for padding
                   overflow: 'auto', // Allow scrolling within this div
                   display: 'flex',
                   flexDirection: 'column',
@@ -367,7 +371,7 @@ const App = () => {
               >
                 {/* Wrap child content in a container that ensures it doesn't exceed the parent's width */}
                 <div style={{ maxWidth: '100%', overflowX: 'hidden' }}>
-                  {key === 'airQuality' && <AboutMeContent />}
+                  {key === 'aboutMe' && <AboutMeContent />}
                   {key === 'extraWindow' && <MyPortfolioContent />}
                 </div>
               </div>
