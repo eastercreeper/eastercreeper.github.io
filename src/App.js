@@ -180,7 +180,7 @@ const DraggableFrame = styled(Frame)`
 const AboutMeContent = () => (
   <div>
     <h1>About Me</h1>
-    <p>Hey, names 이스터!<br></br> Im that weird Korean nerd that produces music, watches anime, <br></br>sweats destiny 2,edits videos, and codes (clearly). <br></br>Feel free to stay and chill here!</p>
+    <p>Hey, names 이스터!<br></br> Im that weird Korean nerd that produces music, watches anime, <br></br>sweats destiny 2,edits videos, draws, and codes (clearly). <br></br>Feel free to stay and chill here!</p>
     <hr></hr>
     <div style={{display: 'flex', marginTop: '20px', alignItems: 'center', justifyContent: 'flex-start'}}>
       {/* GitHub Link */}
